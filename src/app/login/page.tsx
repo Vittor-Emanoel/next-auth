@@ -11,18 +11,20 @@ export default function Page() {
       Object.fromEntries(formData),
     );
 
+    console.log(data);
+
     if (!success) {
       return; //tratar
     }
 
     const { email, password } = data;
 
+    await signIn("credentials", {
+      email,
+      password,
+      redirectTo: "/dash",
+    });
     try {
-      await signIn("credentials", {
-        email,
-        password,
-        redirectTo: "/",
-      });
     } catch (error) {
       if (error instanceof CredentialsSignin) {
         return {
