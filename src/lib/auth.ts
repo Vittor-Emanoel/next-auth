@@ -4,7 +4,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { db } from "./db";
 
-export const { signIn, auth } = NextAuth({
+export const { signIn, auth, signOut } = NextAuth({
   session: {
     strategy: "jwt",
   },
