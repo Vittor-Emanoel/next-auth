@@ -11,8 +11,6 @@ export default function Page() {
       Object.fromEntries(formData),
     );
 
-    console.log(data);
-
     if (!success) {
       return; //tratar
     }
